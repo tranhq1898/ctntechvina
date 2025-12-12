@@ -1,0 +1,127 @@
+body {
+  background-color: #fdfbf7;
+  color: #1f2937;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fdfbf7;
+}
+::-webkit-scrollbar-thumb {
+  background: #0f2218;
+  border: 2px solid #fdfbf7;
+}
+
+/* Nav Link Animation */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #d4af37;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Image Zoom */
+.img-zoom-container {
+  overflow: hidden;
+}
+.img-zoom {
+  transition: transform 0.7s ease-in-out;
+}
+.group:hover .img-zoom {
+  transform: scale(1.05);
+}
+
+/* Shutter Loader Styles */
+#loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.shutter {
+  position: absolute;
+  background-color: #0f2218;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
+  z-index: 10;
+}
+#shutter-top {
+  top: 0;
+  transform-origin: top;
+}
+#shutter-bottom {
+  bottom: 0;
+  transform-origin: bottom;
+}
+
+#loader-content {
+  position: relative;
+  z-index: 20;
+  text-align: center;
+  color: #fdfbf7;
+  mix-blend-mode: difference;
+}
+
+/* Hide Scrollbar for Slider */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Dropdown */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile Dropdown Open State */
+.mobile-dropdown-open i {
+  transform: rotate(180deg);
+}
+
+/* Scroll To Top Button */
+#scroll-top-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#scroll-top-btn.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+/* Cookie Popup Animation */
+#cookie-banner {
+  transform: translateY(120%);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#cookie-banner.visible {
+  transform: translateY(0);
+}
